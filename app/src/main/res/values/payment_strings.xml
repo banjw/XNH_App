@@ -1,0 +1,7 @@
+<resources>
+    <string name="bottom_payment">缴费</string>
+    <string name="bottom_person_change">人员变更</string>
+    <string name="bottom_payment_change">缴费更正</string>
+    <string name="top_menu_unpaid">未缴费家庭</string>
+    <string name="top_menu_paid">已缴费家庭</string>
+</resources>

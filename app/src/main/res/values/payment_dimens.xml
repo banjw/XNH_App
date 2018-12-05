@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="img_layout_height">25dp</dimen>
+    <dimen name="title_linear_layout_height">50dp</dimen>
+    <dimen name="menu_height">40dp</dimen>
+</resources>

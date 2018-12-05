@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="title_text_color">#FCFCFC</color>
+    <color name="bottom_text_color">#FCFCFC</color>
+    <color name="background">#63B344</color>
+    <color name="select_background">#4C8237</color>
+    <color name="menu_select_background">#EFECE0</color>
+    <color name="menu_text_select_color">#63B344</color>
+    <color name="menu_background">#DCDDDD</color>
+    <color name="menu_text_color">#A1A7AE</color>
+</resources>
