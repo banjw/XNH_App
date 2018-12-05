@@ -5,11 +5,16 @@ import android.support.percent.PercentFrameLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity{
     private static final String TAG = "MainActivity";
@@ -34,6 +39,9 @@ public class MainActivity extends AppCompatActivity{
     private PercentFrameLayout unpaidFamilyLayout;
     private TextView unpaidFamily;
     private TextView paidFamily;
+
+    private RecyclerView recyclerView;
+    private List<Family> familyList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +71,13 @@ public class MainActivity extends AppCompatActivity{
         unpaidFamily = (TextView) findViewById(R.id.unpaid_family);
         paidFamily = (TextView) findViewById(R.id.paid_family);
         unpaidFamilyLayout = (PercentFrameLayout) findViewById(R.id.unpaid_family_layout);
+
+        initFamilies();//初始化数据
+        recyclerView = (RecyclerView) findViewById(R.id.family_list);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        FamilyAdapter familyAdapter = new FamilyAdapter(familyList);
+        recyclerView.setAdapter(familyAdapter);
 
         paymentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,6 +146,21 @@ public class MainActivity extends AppCompatActivity{
                 unpaidFamily.setTextColor(menuTextColor);
             }
         });
+    }
+
+    private void initFamilies(){
+        for(int i = 0; i < 5; i++){
+            Family f1 = new Family("赵能素[家]","5203010101010001");
+            Family f2 = new Family("赵祥生[家]","5203010101010002");
+            Family f3 = new Family("赵兰[家]","5203010101010003");
+            Family f4 = new Family("冉义顺[家]","5203010101010004");
+            Family f5 = new Family("王仲武[家]","5203010101010005");
+            familyList.add(f1);
+            familyList.add(f2);
+            familyList.add(f3);
+            familyList.add(f4);
+            familyList.add(f5);
+        }
     }
 
 }

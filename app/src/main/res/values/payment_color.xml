@@ -8,4 +8,6 @@
     <color name="menu_text_select_color">#63B344</color>
     <color name="menu_background">#DCDDDD</color>
     <color name="menu_text_color">#A1A7AE</color>
+    <color name="heyi_num">#A1A7AE</color>
+    <color name="family_name">#565656</color>
 </resources>
