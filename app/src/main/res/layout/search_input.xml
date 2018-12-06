@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/search_input_layout"
+    android:background="@drawable/search_input_border"
+    android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="40dp">
+    <EditText
+        android:id="@+id/search_input"
+        app:layout_widthPercent="86%"
+        app:layout_heightPercent="90%"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="10dp"
+        android:paddingLeft="5dp"
+        android:background="@null"
+        android:textColor="@color/family_name"
+        android:textColorHint="@color/heyi_num"
+        android:textCursorDrawable="@null"
+        android:hint="请输入姓名"/>
+    <ImageView
+        android:id="@+id/search_img"
+        android:src="@drawable/search_input"
+        app:layout_marginLeftPercent="90%"
+        app:layout_marginTopPercent="10%"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+</android.support.percent.PercentFrameLayout>

@@ -9,9 +9,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +41,10 @@ public class MainActivity extends AppCompatActivity{
     private PercentFrameLayout unpaidFamilyLayout;
     private TextView unpaidFamily;
     private TextView paidFamily;
+    //搜索框
+    private PercentFrameLayout searchInputLayout;
+    private EditText searchInput;
+    private ImageView searchImg;
 
     private RecyclerView recyclerView;
     private List<Family> familyList = new ArrayList<>();
@@ -71,6 +77,16 @@ public class MainActivity extends AppCompatActivity{
         unpaidFamily = (TextView) findViewById(R.id.unpaid_family);
         paidFamily = (TextView) findViewById(R.id.paid_family);
         unpaidFamilyLayout = (PercentFrameLayout) findViewById(R.id.unpaid_family_layout);
+        searchInputLayout = (PercentFrameLayout) findViewById(R.id.search_input_layout);
+        searchInput = (EditText) findViewById(R.id.search_input);
+        searchImg = (ImageView) findViewById(R.id.search_img);
+        searchImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: searchImg");
+                Toast.makeText(MainActivity.this,searchInput.getText().toString(),Toast.LENGTH_SHORT).show();
+            }
+        });
 
         initFamilies();//初始化数据
         recyclerView = (RecyclerView) findViewById(R.id.family_list);
@@ -124,6 +140,13 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: search");
+                //显示输入框
+                int state = searchInputLayout.getVisibility();
+                if(state==View.GONE){
+                    searchInputLayout.setVisibility(View.VISIBLE);
+                }else {
+                    searchInputLayout.setVisibility(View.GONE);
+                }
             }
         });
         unpaidFamilyLayout.setOnClickListener(new View.OnClickListener() {

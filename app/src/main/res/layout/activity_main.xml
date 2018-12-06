@@ -17,6 +17,8 @@
         android:layout_below="@+id/paymentTitle"
         android:layout_above="@+id/paymentLinearLayout"
         android:orientation="vertical">
+        <!--搜索框-->
+        <include layout="@layout/search_input"/>
         <!--顶部菜单-->
         <LinearLayout
             android:layout_width="match_parent"
